@@ -19,6 +19,8 @@
   width: max-content;
   border-radius: 20px;
   margin: 30px auto 0 auto;
+  display: flex;
+  flex-direction: row;
 }
 .bill-form h3 {
   font-size: 20px;
