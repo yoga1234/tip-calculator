@@ -124,3 +124,6 @@
 .people-number input.red-border {
   border: 3px solid red;
 }
+.display-none {
+  display: none;
+}

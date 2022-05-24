@@ -6,6 +6,17 @@ import RightSide from "./rightSide/RightSide";
 
 const MainComponent = () => {
   const [tipSelect, setTipSelect] = useState(0);
+  const [bill, setBill] = useState(0);
+  const [people, setPeople] = useState(null);
+  function billChange(e) {
+    setBill(Number(e.target.value));
+  }
+  function peopleChange(e) {
+    setPeople(Number(e.target.value));
+  }
+  function tipCustom(e) {
+    setTipSelect(Number(e.target.value));
+  }
   return (
     <div className="main-component-container">
       <img src={logoMain} alt="logo" className="logo-main" />
@@ -14,7 +25,7 @@ const MainComponent = () => {
           <div className="bill-form">
             <h3>Bill</h3>
             <img src={iconDollar} alt="dollar" className="icon-dollar" />
-            <input type="text" placeholder="0" />
+            <input type="number" placeholder="0" onChange={billChange} />
           </div>
           <div className="tip-form">
             <h3>Select Tip %</h3>
@@ -58,7 +69,7 @@ const MainComponent = () => {
                 50%
               </span>
               <input
-                onClick={() => setTipSelect(99)}
+                onChange={tipCustom}
                 type="text"
                 className={
                   "tip-custom " + (tipSelect === 99 ? "tip-active" : "")
@@ -70,10 +81,25 @@ const MainComponent = () => {
           <div className="people-number">
             <div className="people-container">
               <h3>Number of People</h3>
-              <p>Can't be zero</p>
+              <p
+                className={
+                  people === null
+                    ? "display-none"
+                    : Number(people) === 0
+                    ? ""
+                    : "display-none"
+                }
+              >
+                Can't be zero
+              </p>
             </div>
             <img src={iconPerson} alt="person" className="icon-person" />
-            <input type="text" placeholder="0" />
+            <input
+              onChange={peopleChange}
+              type="number"
+              min={0}
+              placeholder="0"
+            />
           </div>
         </div>
         <div className="right-side">
