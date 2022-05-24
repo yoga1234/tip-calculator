@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./MainComponent.css";
 import { logoMain, iconDollar, iconPerson } from "../images";
 import RightSide from "./rightSide/RightSide";
 
 const MainComponent = () => {
+  const [tipSelect, setTipSelect] = useState(0);
   return (
     <div className="main-component-container">
       <img src={logoMain} alt="logo" className="logo-main" />
@@ -18,12 +19,52 @@ const MainComponent = () => {
           <div className="tip-form">
             <h3>Select Tip %</h3>
             <div className="tip-container">
-              <span className="tip-value">5%</span>
-              <span className="tip-value">10%</span>
-              <span className="tip-value">15%</span>
-              <span className="tip-value">25%</span>
-              <span className="tip-value">50%</span>
-              <input type="text" className="tip-custom" placeholder="Custom" />
+              <span
+                onClick={() => setTipSelect(5)}
+                className={"tip-value " + (tipSelect === 5 ? "tip-active" : "")}
+              >
+                5%
+              </span>
+              <span
+                onClick={() => setTipSelect(10)}
+                className={
+                  "tip-value " + (tipSelect === 10 ? "tip-active" : "")
+                }
+              >
+                10%
+              </span>
+              <span
+                onClick={() => setTipSelect(15)}
+                className={
+                  "tip-value " + (tipSelect === 15 ? "tip-active" : "")
+                }
+              >
+                15%
+              </span>
+              <span
+                onClick={() => setTipSelect(25)}
+                className={
+                  "tip-value " + (tipSelect === 25 ? "tip-active" : "")
+                }
+              >
+                25%
+              </span>
+              <span
+                onClick={() => setTipSelect(50)}
+                className={
+                  "tip-value " + (tipSelect === 50 ? "tip-active" : "")
+                }
+              >
+                50%
+              </span>
+              <input
+                onClick={() => setTipSelect(99)}
+                type="text"
+                className={
+                  "tip-custom " + (tipSelect === 99 ? "tip-active" : "")
+                }
+                placeholder="Custom"
+              />
             </div>
           </div>
           <div className="people-number">
