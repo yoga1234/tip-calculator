@@ -25,9 +25,12 @@ const MainComponent = () => {
           </div>
         </div>
         <div className="people-number">
-          <h3>Number of People</h3>
+          <div className="people-container">
+            <h3>Number of People</h3>
+            <p>Can't be zero</p>
+          </div>
           <img src={iconPerson} alt="person" className="icon-person" />
-          <input type="text" placeholder="0" />
+          <input type="text" placeholder="0" className="red-border" />
         </div>
       </div>
     </div>

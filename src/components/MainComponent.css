@@ -18,7 +18,7 @@
   padding: 40px;
   width: max-content;
   border-radius: 20px;
-  margin: 50px auto 0 auto;
+  margin: 30px auto 0 auto;
 }
 .bill-form h3 {
   font-size: 20px;
@@ -33,6 +33,7 @@
 .bill-form input,
 .people-number input {
   width: 400px;
+  margin-top: 5px;
   text-align: right;
   color: hsl(183, 100%, 15%);
   background-color: hsl(185, 41%, 84%);
@@ -41,7 +42,11 @@
   font-size: 20px;
   outline: none;
   border-radius: 5px;
-  border: none;
+  border: 3px solid hsl(185, 41%, 84%);
+}
+.bill-form input:hover,
+.people-number input:hover {
+  border: 3px solid hsl(172, 67%, 45%);
 }
 .tip-form h3,
 .people-number h3 {
@@ -51,6 +56,15 @@
 .people-number h3 {
   margin-top: 30px;
 }
+.people-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.people-container p {
+  margin-top: 34px;
+  color: red;
+}
 .tip-form h3 {
   margin-top: 30px;
 }
@@ -59,15 +73,43 @@
   flex-wrap: wrap;
   width: 400px;
   gap: 20px;
+  margin-top: 5px;
 }
 .tip-form .tip-value,
 .tip-form .tip-custom {
   border-radius: 5px;
+  border: 3px solid hsl(183, 100%, 15%);
   text-align: center;
   width: 120px;
-  height: 50px;
+  line-height: 50px;
   font-size: 24px;
   font-weight: bold;
   color: hsl(189, 41%, 97%);
   background-color: hsl(183, 100%, 15%);
+  cursor: pointer;
+}
+.tip-value:hover {
+  background-color: hsl(172, 67%, 45%);
+  border: 3px solid hsl(172, 67%, 45%);
+}
+.tip-custom {
+  outline: hsl(172, 67%, 45%);
+}
+.tip-custom:hover {
+  border: 3px solid hsl(172, 67%, 45%);
+}
+.tip-custom:focus {
+  border: 3px solid hsl(172, 67%, 45%);
+}
+.tip-custom::placeholder {
+  color: hsl(189, 41%, 97%);
+}
+.tip-custom:-ms-input-placeholder {
+  color: hsl(189, 41%, 97%);
+}
+.tip-custom::ms-input-placeholder {
+  color: hsl(189, 41%, 97%);
+}
+.people-number input.red-border {
+  border: 3px solid red;
 }
