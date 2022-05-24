@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+:root {
+  --font-main: "Space Mono", monospace;
+}
+.logo-main {
+  display: block;
+  margin: 50px auto 0 auto;
+}
+.app-container {
+  background-color: #fff;
+  padding: 40px;
+  width: max-content;
+  border-radius: 20px;
+  margin: 50px auto 0 auto;
+}
+.bill-form h3 {
+  font-size: 20px;
+  color: hsl(186, 14%, 43%);
+}
+.icon-dollar,
+.icon-person {
+  position: relative;
+  left: 15px;
+  margin-right: -11px;
+}
+.bill-form input,
+.people-number input {
+  width: 400px;
+  text-align: right;
+  color: hsl(183, 100%, 15%);
+  background-color: hsl(185, 41%, 84%);
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+.tip-form h3,
+.people-number h3 {
+  font-size: 20px;
+  color: hsl(186, 14%, 43%);
+}
+.people-number h3 {
+  margin-top: 30px;
+}
+.tip-form h3 {
+  margin-top: 30px;
+}
+.tip-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  gap: 20px;
+}
+.tip-form .tip-value,
+.tip-form .tip-custom {
+  border-radius: 5px;
+  text-align: center;
+  width: 120px;
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: hsl(189, 41%, 97%);
+  background-color: hsl(183, 100%, 15%);
+}
