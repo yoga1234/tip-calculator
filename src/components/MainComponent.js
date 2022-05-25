@@ -17,6 +17,13 @@ const MainComponent = () => {
   function tipCustom(e) {
     setTipSelect(Number(e.target.value));
   }
+  function resetButton() {
+    setTipSelect(0);
+    setBill(0);
+    setPeople(null);
+    document.querySelector(".bill-input").value = "";
+    document.querySelector("#people-input").value = "";
+  }
   return (
     <div className="main-component-container">
       <img src={logoMain} alt="logo" className="logo-main" />
@@ -26,6 +33,7 @@ const MainComponent = () => {
             <h3>Bill</h3>
             <img src={iconDollar} alt="dollar" className="icon-dollar" />
             <input
+              className="bill-input"
               type="number"
               placeholder="0"
               min={0}
@@ -100,6 +108,7 @@ const MainComponent = () => {
             </div>
             <img src={iconPerson} alt="person" className="icon-person" />
             <input
+              id="people-input"
               onChange={peopleChange}
               type="number"
               min={0}
@@ -113,6 +122,7 @@ const MainComponent = () => {
             billNumber={bill}
             tipNumber={tipSelect}
             peopleNumber={people}
+            reset={resetButton}
           />
         </div>
       </div>
