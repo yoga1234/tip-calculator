@@ -25,7 +25,12 @@ const MainComponent = () => {
           <div className="bill-form">
             <h3>Bill</h3>
             <img src={iconDollar} alt="dollar" className="icon-dollar" />
-            <input type="number" placeholder="0" onChange={billChange} />
+            <input
+              type="number"
+              placeholder="0"
+              min={0}
+              onChange={billChange}
+            />
           </div>
           <div className="tip-form">
             <h3>Select Tip %</h3>
@@ -99,11 +104,16 @@ const MainComponent = () => {
               type="number"
               min={0}
               placeholder="0"
+              className={people === 0 ? "red-border" : ""}
             />
           </div>
         </div>
         <div className="right-side">
-          <RightSide />
+          <RightSide
+            billNumber={bill}
+            tipNumber={tipSelect}
+            peopleNumber={people}
+          />
         </div>
       </div>
     </div>
